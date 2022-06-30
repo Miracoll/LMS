@@ -1,0 +1,129 @@
+{% extends 'school/main.html' %}
+{% block content %}
+<section class="section register d-flex flex-column align-items-center justify-content-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-md-12 d-flex flex-column align-items-center justify-content-center">
+
+            <!-- <div class="d-flex justify-content-center py-4">
+                <a href="index.html" class="logo d-flex align-items-center w-auto">
+                <img src="assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">NiceAdmin</span>
+                </a>
+            </div> -->
+          <!-- End Logo -->
+
+            <div>
+                <h5 class="card-title text-center pb-0 fs-4">Create an Account for Staff</h5>
+                <p class="text-center small">Enter your personal details to create account</p>
+            </div>
+            <form action="" class="row g-3 needs-validation" novalidate method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="col-lg-4 col-md-12">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" name="last_name" class="form-control" id="lastName" required>
+                    <div class="invalid-feedback">Please, enter your last name!</div>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" name="first_name" class="form-control" id="firstName" required>
+                    <div class="invalid-feedback">Please, enter your first name!</div>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <label for="otherName" class="form-label">Other Name</label>
+                    <input type="text" name="other_name" class="form-control" id="otherName">
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                    <label for="yourEmail" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" id="yourEmail">
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <label for="yourEmail" class="form-label">Phone Number</label>
+                    <input type="tels" name="mobile" class="form-control" id="yourEmail">
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <label for="inputDate" class="col-sm-6 col-form-label">Date of birth</label>
+                      <input type="date" name="dob" class="form-control" required>
+                      <div class="invalid-feedback">Please, enter your date of birth!</div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <label class="col-sm-6 col-form-label">Gender</label>
+                    <select name="sex" class="form-select" aria-label="Default select example">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="address" class="col-sm-2 col-form-label">Address</label>
+                    <textarea class="form-control" style="height: 70px" name="address" required></textarea>
+                    <div class="invalid-feedback">Please, enter your address!</div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <label for="inputNumber" class="col-sm-2 col-form-label">Passport</label>
+                    <input class="form-control" type="file" id="formFile" accept=".jpg,.png,.jpeg" name="myfile" required>
+                    <div class="invalid-feedback">Please, upload student passport!</div>
+                    <!-- {{form}} -->
+                </div>
+                <div class="col-3">
+                    <label for="role" class="col-sm-2 col-form-label">Role</label>
+                    <select name="role" id="" class="form-control">
+                        <option value="">--Select A Role--</option>
+                        {% for staff in staff %}
+                        <option value="{{staff.role}}">{{staff.role}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <h5 class="card-title text-center pb-0 fs-4">Enter parent/guardian details</h5>
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                    <label class="">Relationship</label>
+                    <select name="relate" class="form-select" aria-label="Default select example">
+                        <option value="Father">Father</option>
+                        <option value="Mother">Mother</option>
+                        <option value="Brother">Brother</option>
+                        <option value="Sister">Sister</option>
+                        <option value="Cousin">Cousin</option>
+                        <option value="Nephew">Nephew</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <label for="yourName" class="">Full Name</label>
+                    <input type="text" name="full_name" class="form-control" id="yourName" required>
+                    <div class="invalid-feedback">Please, enter guardian/parent full name!</div>
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                    <label for="yourEmail" class="form-label">Email</label>
+                    <input type="email" name="email1" class="form-control" id="yourEmail">
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <label for="yourEmail" class="form-label">Phone Number</label>
+                    <input type="tel" name="mobile1" class="form-control" id="yourEmail" required>
+                    <div class="invalid-feedback">Please, enter guardian/parent full name!</div>
+                </div>
+                <div class="col-12">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Address</label>
+                    <textarea class="form-control" style="height: 70px" name="address1" required></textarea>
+                    <div class="invalid-feedback">Please, enter guardian/parent address!</div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
+                        <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button name="submit" class="btn btn-primary w-100" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</section>
+{% endblock content %}

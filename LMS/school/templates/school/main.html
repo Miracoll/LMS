@@ -1,0 +1,700 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dashboard - Rexous</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'school/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'school/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'school/assets/css/bootstrap.min.css.css' %}" rel="stylesheet">
+  <link href="{% static 'school/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'school/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'school/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'school/assets/vendor/quill/quill.snow.css' %}" rel="stylesheet">
+  <link href="{% static 'school/assets/vendor/quill/quill.bubble.css' %}" rel="stylesheet">
+  <link href="{% static 'school/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'school/assets/vendor/simple-datatables/style.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'school/assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.2.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center d-print-none">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="{% url 'home' %}" class="logo d-flex align-items-center">
+        <img src="{% static 'school/assets/img/logo.png' %}" alt="">
+        <span class="d-none d-lg-block">Rexous</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="{% static 'school/assets/img/messages-1.jpg' %}" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="{% static 'school/assets/img/messages-2.jpg' %}" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="{% static 'school/assets/img/messages-3.jpg' %}" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="{{user.profile.passport.url}}" alt="Profile" class="rounded-circle">
+            {% if user.profile.role.keyword == 'class-teacher' %}
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{user.first_name}}{{user.last_name}}</span>
+            {% else %}
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{user.last_name}}</span>
+            {% endif %}
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              {% if user.profile.role.keyword == 'class-teacher' %}
+              <h6>{{user.first_name}}{{user.last_name}}</h6>
+              <span>{{user.profile.role}}</span>
+              {% else %}
+              <h6>{{user.last_name}} {{user.first_name}}</h6>
+              <span>{{user.profile.role}}</span>
+              {% endif %}
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{% url 'userprofile' %}">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{% url 'logout' %}">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'home' %}">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      {% if user.profile.role.keyword == 'subject-teacher' or user.profile.role.keyword == 'admin' %}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Academics</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'assessment' %}">
+              <i class="bi bi-circle"></i><span>Assessment</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'project' %}">
+              <i class="bi bi-circle"></i><span>Project</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'test' %}">
+              <i class="bi bi-circle"></i><span>Test</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'exam' %}">
+              <i class="bi bi-circle"></i><span>Exam</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+      <!-- End Components Nav -->
+      {% if user.profile.role.keyword == 'admin' %}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'config' %}">
+              <i class="bi bi-circle"></i><span>Manage school</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'role' %}">
+              <i class="bi bi-circle"></i><span>Add role</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Backup all data</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+      <!-- End Forms Nav -->
+      {% if user.profile.role.keyword == 'admin' %}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#card-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Card</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="card-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'generatecard' %}">
+              <i class="bi bi-circle"></i><span>Generate card</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+      <!-- End Forms Nav -->
+      {% if user.profile.role.keyword == 'admin' or user.profile.role.keyword == 'bursar' or user.profile.role.keyword == 'principal' or user.profile.role.keyword == 'vice-principal' %}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#pay" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Payment</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="pay" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Setup fee</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Manage fees</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Get paid students</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Get unpaid students</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+      <!-- End Forms Nav -->
+      {% if user.profile.role.keyword == 'principal' or user.profile.role.keyword == 'admin' or user.profile.role.keyword == 'vice-principal' %}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Administartor</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'session' %}">
+              <i class="bi bi-circle"></i><span>Session</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'term' %}">
+              <i class="bi bi-circle"></i><span>Term</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'subject' %}">
+              <i class="bi bi-circle"></i><span>Subject</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'arm' %}">
+              <i class="bi bi-circle"></i><span>Arm</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'class' %}">
+              <i class="bi bi-circle"></i><span>Class</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+      <!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-bar-chart"></i><span>Messaging</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Cooming soon</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Charts Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gem"></i><span>Registration</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'register_student' %}">
+              <i class="bi bi-circle"></i><span>Add new student</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'register_teacher' %}">
+              <i class="bi bi-circle"></i><span>Add new staff</span>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Add new hostel</span>
+            </a>
+          </li> -->
+        </ul>
+      </li><!-- End Icons Nav -->
+      {% if user.profile.role.keyword == 'class-teacher' or user.profile.role.keyword == 'admin' %}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#att-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Attendance</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="att-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'attendance' %}">
+              <i class="bi bi-circle"></i><span>Today attendance</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'unlock' %}">
+              <i class="bi bi-circle"></i><span>Unlock attendance</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+      <!-- End Attendance Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#result-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-bar-chart"></i><span>Result</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="result-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          {% if user.profile.role.keyword == 'admin' or user.profile.role.keyword == 'principal' or user.profile.role.keyword == 'vice-principal' %}
+          <li>
+            <a href="{% url 'result_compute' %}">
+              <i class="bi bi-circle"></i><span>Start result computation</span>
+            </a>
+          </li>
+          {%endif%}
+          {% if user.profile.role.keyword == 'admin' or user.profile.role.keyword == 'subject-teacher' or user.profile.role.keyword == 'class-teacher' %}
+          <li>
+            <a href="{% url 'result_template' %}">
+              <i class="bi bi-circle"></i><span>Get result template</span>
+            </a>
+          </li>
+          {% endif %}
+          {% if user.profile.role.keyword == 'admin' or user.profile.role.keyword == 'subject-teacher' or user.profile.role.keyword == 'class-teacher' %}
+          <li>
+            <a href="{% url 'result_upload' %}">
+              <i class="bi bi-circle"></i><span>Upload result</span>
+            </a>
+          </li>
+          {% endif %}
+          <li>
+            <a href="{% url 'get_result' %}">
+              <i class="bi bi-circle"></i><span>Check student result</span>
+            </a>
+          </li>
+          {% if user.profile.role.keyword == 'class-teacher' or user.profile.role.keyword == 'subject-teacher' or user.profile.role.keyword == 'admin' %}
+          <li>
+            <a href="{% url 'result_remove' %}">
+              <i class="bi bi-circle"></i><span>Remove uploaded result</span>
+            </a>
+          </li>
+          {% endif %}
+          {% if user.profile.role.keyword == 'class-teacher' or user.profile.role.keyword == 'principal' or user.profile.role.keyword == 'guildance-and-cousellor' or user.profile.role.keyword == 'hostel-manager' %}
+          <li>
+            <a href="{% url 'result_comment' %}">
+              <i class="bi bi-circle"></i><span>Add result comment</span>
+            </a>
+          </li>
+          {% endif %}
+          {% if user.profile.role.keyword == 'principal' or user.profile.role.keyword == 'guildance-and-cousellor' or user.profile.role.keyword == 'hostel-manager' or user.profile.role.keyword == 'admin' or user.profile.role.keyword == 'subject-teacher' %}
+          <li>
+            <a href="{% url 'result_approve' %}">
+              <i class="bi bi-circle"></i><span>Approve result</span>
+            </a>
+          </li>
+          {% endif %}
+          {% if user.profile.role.keyword == 'class-teacher' or user.profile.role.keyword == 'principal' or user.profile.role.keyword == 'guildance-and-cousellor' or user.profile.role.keyword == 'hostel-manager' or user.profile.role.keyword == 'admin' %}
+          <li>
+            <a href="{% url 'register_student' %}">
+              <i class="bi bi-circle"></i><span>Download result</span>
+            </a>
+          </li>
+          {% endif %}
+          {% if user.profile.role.keyword == 'class-teacher' or user.profile.role.keyword == 'principal' or user.profile.role.keyword == 'guildance-and-cousellor' or user.profile.role.keyword == 'hostel-manager' or user.profile.role.keyword == 'admin' %}
+          <li>
+            <a href="{% url 'result_status' %}">
+              <i class="bi bi-circle"></i><span>Result status</span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </li>
+      {% if user.profile.role.keyword == 'principal' or user.profile.role.keyword == 'vice-principal' or user.profile.role.keyword == 'admin' or user.profile.role.keyword == 'class-teacher' %}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#student-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-person"></i><span>Student</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="student-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          {% if user.profile.role.keyword == 'principal' or user.profile.role.keyword == 'vice-principal' or user.profile.role.keyword == 'admin' or user.profile.role.keyword == 'class-teacher' %}
+          <li>
+            <a href="{% url 'get_student' %}">
+              <i class="bi bi-circle"></i><span>Manage student</span>
+            </a>
+          </li>
+          {%endif%}
+          {% if user.profile.role.keyword == 'principal' or user.profile.role.keyword == 'vice-principal' or user.profile.role.keyword == 'admin' %}
+          <li>
+            <a href="{% url 'transfer_student' %}">
+              <i class="bi bi-circle"></i><span>Transfer student</span>
+            </a>
+          </li>
+          {%endif%}
+          {% if user.profile.role.keyword == 'principal' or user.profile.role.keyword == 'vice-principal' or user.profile.role.keyword == 'admin' or user.profile.role.keyword == 'class-teacher' %}
+          <li>
+            <a href="{% url 'enable_student' %}">
+              <i class="bi bi-circle"></i><span>Enable student</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'disable_student' %}">
+              <i class="bi bi-circle"></i><span>Disable student</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Reset student password</span>
+            </a>
+          </li>
+          {%endif%}
+          {% if user.profile.role.keyword == 'admin' %}
+          <li>
+            <a href="{% url 'edit_reg' %}">
+              <i class="bi bi-circle"></i><span>Edit student reg</span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </li>
+      {% endif %}
+      {% if user.profile.role.keyword == 'principal' or user.profile.role.keyword == 'vice-principal' or user.profile.role.keyword == 'admin' %}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#staff-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-person"></i><span>Staff</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="staff-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'get_staff' %}">
+              <i class="bi bi-circle"></i><span>Manage staff</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'enable_staff' %}">
+              <i class="bi bi-circle"></i><span>Enable staff</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'disable_staff' %}">
+              <i class="bi bi-circle"></i><span>Disable staff</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Reset staff password</span>
+            </a>
+          </li>
+          {% if user.profile.role.keyword == 'admin' %}
+          <li>
+            <a href="{% url 'edit_staff_reg' %}">
+              <i class="bi bi-circle"></i><span>Edit staff reg</span>
+            </a>
+          </li>
+          {%endif%}
+        </ul>
+      </li>
+      {% endif %}
+      <!-- <li class="nav-heading">Pages</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="users-profile.html">
+          <i class="bi bi-person"></i>
+          <span>Student</span>
+        </a>
+      </li> -->
+      <!-- End Profile Page Nav -->
+
+      <!-- <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'logout' %}">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Logout</span>
+        </a>
+      </li> -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} fade show alert-dismissible">
+        <strong style="text-transform: capitalize;">{{ message.tags }}!</strong> {{message}}
+        <!-- <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+    </div>
+    {% endfor %}
+    {% endif %}
+   
+    {% block content %}{% endblock content %}
+  </main><!-- End #main -->
+
+  {% block footer %}
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Rexous</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      Designed by <a href="https://rexoustech.com/">Rexous developer</a>
+    </div>
+  </footer><!-- End Footer -->
+  {% endblock footer %}
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center d-print-none"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'school/assets/js/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static 'school/assets/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'school/assets/vendor/apexcharts/apexcharts.min.js' %}"></script>
+  <script src="{% static 'school/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'school/assets/vendor/chart.js/chart.min.js' %}"></script>
+  <script src="{% static 'school/assets/vendor/echarts/echarts.min.js' %}"></script>
+  <script src="{% static 'school/assets/vendor/quill/quill.min.js' %}"></script>
+  <script src="{% static 'school/assets/vendor/simple-datatables/simple-datatables.js' %}"></script>
+  <script src="{% static 'school/assets/vendor/tinymce/tinymce.min.js' %}"></script>
+  <script src="{% static 'school/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'school/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

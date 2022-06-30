@@ -1,0 +1,28 @@
+{% extends 'school/main.html' %}
+{% block content %}
+<div class="pagetitle">
+    <h1>Session</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item active">session</li>
+      </ol>
+    </nav>
+</div><!-- End Page Title -->
+<div>
+    <h3 class="text-center">Manage Session</h3>
+    <div>
+        <table class="table">
+            <tr>
+                <td><a href="{% url 'viewsession' %}">View session</a></td>
+            </tr>
+            <tr>
+                <td><a href="{% url 'switchsession' %}">Switch session</a></td>
+            </tr>
+            <tr>
+                <td><a href="{% url 'createsession' %}">Create session</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endblock content %}

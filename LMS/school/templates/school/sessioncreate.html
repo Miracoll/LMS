@@ -1,0 +1,51 @@
+{% extends 'school/main.html' %}
+{% block content %}
+<div class="pagetitle">
+    <h1>Create session</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'session' %}">session</a></li>
+        <li class="breadcrumb-item active">create session</li>
+      </ol>
+    </nav>
+</div><!-- End Page Title -->
+<div>
+    <h3 class="text-center">Manage Session</h3>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-6">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Session</label>
+                        <div class="col-sm-4">
+                            <select name="session" class="form-select" aria-label="Default select example">
+                                <option selected></option>
+                                <option value="2023/2024">2023/2024</option>
+                                <option value="2024/2025">2024/2025</option>
+                                <option value="2025/2026">2025/2026</option>
+                            </select>
+                        </div>
+                        <label class="col-sm-2 col-form-label">Year</label>
+                        <div class="col-sm-4">
+                            <select name="year" class="form-select" aria-label="Default select example">
+                                <option selected></option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2024">2025</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <button name="submit" type="submit" class="btn btn-outline-primary">Create</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </section>
+</div>
+{% endblock content %}
